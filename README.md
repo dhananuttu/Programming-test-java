@@ -1,6 +1,6 @@
 # Programming-test-java
 BookStore
-Created back end Web Service project called BookStore
+Created back end Web Service project.
 With this project generated output folder is included,
 Generated folder contains web method files and wsdl files.
 If you want to create new generated output, 
