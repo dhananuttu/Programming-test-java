@@ -1,0 +1,9 @@
+/target/
+/temp/
+/nb-configuration.xml
+/classes/
+.project
+.classpath
+.settings
+/nbproject/
+/bin/

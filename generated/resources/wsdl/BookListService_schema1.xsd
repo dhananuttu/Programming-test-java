@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://service.bookstore.contribe.com/" xmlns:tns="http://service.bookstore.contribe.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="add" type="tns:add"/>
+
+  <xs:element name="addResponse" type="tns:addResponse"/>
+
+  <xs:element name="buy" type="tns:buy"/>
+
+  <xs:element name="buyResponse" type="tns:buyResponse"/>
+
+  <xs:element name="delete" type="tns:delete"/>
+
+  <xs:element name="deleteResponse" type="tns:deleteResponse"/>
+
+  <xs:element name="list" type="tns:list"/>
+
+  <xs:element name="listResponse" type="tns:listResponse"/>
+
+  <xs:element name="remove" type="tns:remove"/>
+
+  <xs:element name="removeResponse" type="tns:removeResponse"/>
+
+  <xs:complexType name="buy">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:book" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="book">
+    <xs:sequence>
+      <xs:element name="author" type="xs:string" minOccurs="0"/>
+      <xs:element name="price" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="title" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="buyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="add">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:book" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="delete">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:book" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="list">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="listResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:book" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="remove">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:book" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
